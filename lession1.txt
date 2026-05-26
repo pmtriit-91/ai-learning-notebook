@@ -1,0 +1,26 @@
+LLM là lõi suy luận/ngôn ngữ, không phải toàn bộ agent.
+Agent = LLM + tools + quyền thao tác + workflow.
+
+Token là đơn vị model đọc và sinh ra.
+Context window là vùng nhớ tạm chứa token mà model nhìn thấy.
+Hallucination là khi AI bịa hoặc kết luận sai nhưng nói như thật.
+
+Muốn agent sửa code đúng:
+- context phải đủ
+- scope phải rõ
+- constraint phải chặt
+- không cho đoán bừa
+- phải có report và verify
+
+Example prompt: " Sửa lỗi trang quản lý: input trong item con của data xyz đang bị render đúp.
+
+Hãy kiểm tra cấu trúc data xyz và logic render trước khi sửa. 
+Chỉ sửa nguyên nhân trực tiếp, không refactor lan man.
+Không được đoán field/API/component nếu chưa thấy trong source.
+Nếu thiếu dữ liệu, báo rõ cần thêm gì.
+
+Report sau khi sửa:
+1. Đã kiểm tra file nào
+2. Nguyên nhân
+3. Đã sửa gì
+4. Cách verify "
